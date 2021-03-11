@@ -1,0 +1,25 @@
+{
+  "name": "tesseract",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && cat .env.example > .env && node dist/index.js",
+    "dockerize": "docker build -t phanletrunghieu/ocr-service ."
+  },
+  "dependencies": {
+    "@types/express": "^4.17.11",
+    "@types/generic-pool": "^3.1.9",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.33",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "generic-pool": "^3.7.2",
+    "morgan": "^1.10.0",
+    "tesseract.js": "^2.1.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3",
+    "typescript-deno-plugin": "^1.31.0"
+  }
+}
