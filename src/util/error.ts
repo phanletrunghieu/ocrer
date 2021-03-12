@@ -22,3 +22,11 @@ export const errOCR = (rawError?: any): MyError => {
     message: "fail to ocr",
   }
 }
+export const errMissingImage = (rawError?: any): MyError => {
+  return {
+    rawError,
+    errorCode: 10030,
+    httpStatus: 500,
+    message: "missing image",
+  }
+}

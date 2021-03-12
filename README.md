@@ -8,7 +8,7 @@ docker run --rm -t -p 3000:3000 phanletrunghieu/ocrer:latest
 
 ## API
 
-### OCR by image url
+### 1. OCR by image url
 
 **Path:** POST /url
 
@@ -30,4 +30,27 @@ curl --request POST \
 	"lang": "eng",
 	"url": "https://tesseract.projectnaptha.com/img/eng_bw.png"
 }'
+```
+
+### 2. OCR by uploading image
+
+**Path:** POST /upload
+
+**Request body:**
+
+| Params | Type | Description |
+|--|--|--|
+| lang | string | Language |
+| image | file | Image to ocr |
+
+
+**Example:**
+
+```
+curl --request POST \
+  --url http://localhost:3000/upload \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'content-type: multipart/form-data; boundary=---011000010111000001101001' \
+  --form lang=vie \
+  --form image=@ocr.png
 ```
